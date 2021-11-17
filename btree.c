@@ -1,5 +1,6 @@
 // Implementação em C de árvore binária
 #include <stdio.h>
+#include <stdlib.h>
 #define DEGREE 10 // Aqui entra o tamanho do sistema de arquivos dividido pelo tamanho da entrada
 
 typedef struct BTreeNode_T BTreeNode;
@@ -65,7 +66,7 @@ BTreeNode* search_btree_node(BTreeNode *node, int k)
     return search_btree_node(node->C[i], k);
 }
 
-void search_tree(BTree* btree, int k) {
+BTreeNode* search_tree(BTree* btree, int k) {
     return (btree->root == NULL)? NULL : search_btree_node(btree->root, k);
 }
  
